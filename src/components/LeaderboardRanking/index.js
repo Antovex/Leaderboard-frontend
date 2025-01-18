@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { Box, Tabs, Tab, Typography } from "@mui/material";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents"; // Crown Icon
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,12 @@ import { getImageName } from "../../utils"; // Function to extract initials
 
 function LeaderboardRanking({ selectedTab, topThree }) {
   const navigate = useNavigate();
-  const tabMapping = ["daily", "weekly", "monthly"];
+  // const tabMapping = ["daily", "weekly", "monthly"];
+  const tabMapping = useMemo(() => [
+    {label: "Daily", link: "/leaderboard/daily"},
+    {label: "Weekly", link: "/leaderboard/weekly"},
+    {label: "Monthly", link: "/leaderboard/monthly"},
+  ], [])
   const [tabIndex, setTabIndex] = useState(tabMapping.indexOf(selectedTab));
 
   useEffect(() => {
