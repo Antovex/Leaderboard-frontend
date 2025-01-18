@@ -30,9 +30,11 @@ function Leaderboard() {
   
   // Fetch users from the backend
   useEffect(() => {
+    console.log(`From Leaderboard: ${process.env.REACT_APP_BACKEND_URI}`);
     axios
     .get(`${process.env.REACT_APP_BACKEND_URI}/api/users`)
     .then((response) => {
+      console.log(response.data);
       setAllUsers(response.data);
       updateWinners(response.data);
     })

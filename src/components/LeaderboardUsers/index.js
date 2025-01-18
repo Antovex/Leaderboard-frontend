@@ -31,7 +31,7 @@ function LeaderboardUsers({ users, updateWinners, setUsers }) {
   const handleClaimPoints = async (userId) => {
     try {
       const response = await axios.post(
-        `http://localhost:8001/api/claim-points/${userId}`
+        `${process.env.REACT_APP_BACKEND_URI}/api/claim-points/${userId}`
       );
       const pointsAwarded = response.data.points;
       console.log(`User ${userId} awarded ${pointsAwarded} points!`);
