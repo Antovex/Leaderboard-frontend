@@ -11,7 +11,7 @@ function LeaderboardRanking({ selectedTab, topThree }) {
 
   useEffect(() => {
     setTabIndex(tabMapping.indexOf(selectedTab));
-  }, [selectedTab]);
+  }, [selectedTab, tabMapping]);
 
 
   return (
