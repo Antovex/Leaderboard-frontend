@@ -12,15 +12,15 @@ function LeaderboardHeader() {
         sx={{
           backgroundColor: "#fff",
           padding: "12px 4px",
-          width: "100vw", // Full viewport width
+          width: "100vw",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          position: "fixed", // Fix it to the top
+          position: "fixed",
           top: 0,
           left: 0,
-          zIndex: 1000, // Ensure it stays above other elements
-          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", // Optional subtle shadow for clarity
+          zIndex: 1000,
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
         }}
       >
         {/* Left Side - Leaderboard Text */}

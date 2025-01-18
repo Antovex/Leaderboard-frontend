@@ -6,7 +6,6 @@ import { getImageName } from "../../utils"; // Function to extract initials
 
 function LeaderboardRanking({ selectedTab, topThree }) {
   const navigate = useNavigate();
-  // const tabMapping = ["daily", "weekly", "monthly"];
   const tabMapping = useMemo(() => [
     {label: "Daily", link: "/leaderboard/daily"},
     {label: "Weekly", link: "/leaderboard/weekly"},
@@ -37,7 +36,7 @@ function LeaderboardRanking({ selectedTab, topThree }) {
           value={tabIndex}
           onChange={(event, newValue) => {
             setTabIndex(newValue);
-            navigate(`/leaderboard/${tabMapping[newValue]}`); // Navigate to selected tab
+            navigate(`/leaderboard/${tabMapping[newValue]}`);
           }}
           centered
           sx={{

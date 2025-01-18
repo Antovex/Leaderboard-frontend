@@ -4,7 +4,7 @@ import { NAV_ITEMS } from "../../Constant";
 import { Box } from "@mui/material";
 
 function BottomBar() {
-  const currentPath = window.location.pathname; // Get current path
+  const currentPath = window.location.pathname;
 
   return (
     <Box
@@ -24,20 +24,20 @@ function BottomBar() {
         }}
       >
         {NAV_ITEMS.map((item) => {
-          const isActive = currentPath === item.link; // Check if the tab is active
+          const isActive = currentPath === item.link;
 
           return (
             <BottomNavigationAction
               key={item.key}
               label={item.label}
               icon={React.cloneElement(item.icon, {
-                sx: { color: isActive ? "#FF9800" : "#FFF" }, // Apply color to icon
+                sx: { color: isActive ? "#FF9800" : "#FFF" },
               })}
               sx={{
-                "& .Mui-selected": { color: "#FF9800" }, // Ensure selected label is yellow
+                "& .Mui-selected": { color: "#FF9800" },
               }}
               onClick={() => {
-                window.location.href = item.link; // Force navigation
+                window.location.href = item.link;
               }}
             />
           );

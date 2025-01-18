@@ -37,9 +37,9 @@ const Puller = styled("div")(() => ({
 }));
 
 function BottomDrawer({ open, onClose, user }) {
-  if (!user) return null; // Prevent rendering if no user is selected
+  if (!user) return null;
 
-  const { name, totalPoints } = user; // Provide a default empty array for `stats`
+  const { name, totalPoints } = user;
 
   return (
     <Root>

@@ -8,8 +8,8 @@ import axios from "axios";
 
 function Leaderboard() {
   console.log(process.env);
-  const { type } = useParams(); // Get type from URL
-  const selectedTab = type || "daily"; // Default to "daily"
+  const { type } = useParams();
+  const selectedTab = type || "daily";
   
   const [topThree, setTopThree] = useState([]); // Store top 3 winners
   // const [users, setUsers] = useState([]);
@@ -19,7 +19,7 @@ function Leaderboard() {
   // Function to get top 3 users based on highest points
   const updateWinners = (users) => {
     const sortedUsers = [...users]
-    .sort((a, b) => b.points - a.points) // Sort by highest points
+    .sort((a, b) => b.points - a.points)
     .slice(0, 3); // Take top 3
     
     let top = sortedUsers[0];
@@ -47,7 +47,7 @@ function Leaderboard() {
     <Container
       maxWidth="lg"
       sx={{
-        height: "100vh", // Full screen height
+        height: "100vh", 
         display: "flex",
         flexDirection: "column",
       }}
@@ -58,11 +58,11 @@ function Leaderboard() {
       {/* Scrollable Content */}
       <Box
         sx={{
-          flex: 1, // Takes remaining space
-          overflowY: "auto", // Enables scrolling
-          paddingBottom: "80px", // Prevents overlap with BottomBar
-          scrollbarWidth: "none", // Hide scrollbar in Firefox
-          "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar in Chrome/Safari
+          flex: 1, 
+          overflowY: "auto",
+          paddingBottom: "80px",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
         }}
       >
         {/* Pass top 3 winners to Ranking Component */}

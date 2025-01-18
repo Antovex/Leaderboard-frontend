@@ -18,12 +18,11 @@ function LeaderboardUsers({ users, updateWinners, setUsers }) {
     setIsDrawerOpen(false);
   };
 
-  // ✅ Update only the top 3 winners to avoid unnecessary re-renders
   useEffect(() => {
     if (users && users.length > 0) {
       const topWinners = [...users]
-        .sort((a, b) => b.points - a.points) // Sort users by highest points
-        .slice(0, 3); // Take top 3 winners
+        .sort((a, b) => b.points - a.points)
+        .slice(0, 3);
       updateWinners(topWinners);
     }
   }, [users, updateWinners]);
